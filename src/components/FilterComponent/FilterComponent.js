@@ -126,7 +126,7 @@ class ConnectFilterComponentForm extends Component {
 
   render() {
     return (
-      <Card style={{ height: '100%' }} >
+      <Card style={{ height: '100%' }} bordered={false}>
         Request
         <Row >
           &nbsp; &nbsp;  <Checkbox value="TRAVEL" onChange={this.toggleCheckboxRequest} checked={this.props.filter.RequestType.some((el) => { return el === "TRAVEL" })}>Travel</Checkbox>

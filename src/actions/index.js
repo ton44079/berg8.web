@@ -7,8 +7,9 @@ import {
     GetDocumentWaitingPage,
     GetActionButtonWaitingPage,
     GetTaskWaitingPage
-
 } from './WaitingPageAction';
+
+import {changeStepRequestPage} from './requestPageAction'
 
 import { SetFlagLoading } from './GlobalAction ';
 
@@ -23,5 +24,7 @@ export {
     GetTaskWaitingPage,
     GetDocumentWaitingPage,
     // Global Action
-    SetFlagLoading
+    SetFlagLoading,
+    // Request Page
+    changeStepRequestPage
 }

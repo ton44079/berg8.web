@@ -50,7 +50,7 @@ class WaitingPageTemp extends Component {
             },
             WIDGET: 'TASK'
         }
-        
+
         Promise.all([this.props.SetFlagLoading(true),
         this.props.initCommand(commandObj),
         this.props.initTask(taskObj),
@@ -77,14 +77,9 @@ class WaitingPageTemp extends Component {
     render() {
 
         return (
-            <div className='row'>
-
-                <div className="col-sm-12 col-md-12 col-lg-12" style={{ padding: 5 }}>
-                    <Card title={<HeaderButtonWaiting></HeaderButtonWaiting>}  >
-                        <DataTableComponent></DataTableComponent>
-                    </Card>
-                </div>
-            </div>
+            <Card title={<HeaderButtonWaiting></HeaderButtonWaiting>}  >
+                <DataTableComponent></DataTableComponent>
+            </Card>
         )
     }
 }

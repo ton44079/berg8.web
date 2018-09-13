@@ -5,7 +5,7 @@ import { Card, Row, Col, Badge } from 'antd';
 class connectMyTask extends Component {
     render() {
         return (
-            <Card>
+            <Card bordered={false}>
                 {this.props.data.map((el, i) => (
                     <Row key={i} type="flex" justify="center" align="middle">
                        

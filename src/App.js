@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import WaitingPage from './pages/WaitingPage/WaitingPage';
 import WaitingPageSideBar from './pages/WaitingPage/WaitingPageSideBar';
-import NewItemPage from './pages/NewItemPage/NewItemPage';
+import RequestPage from './pages/RequestPage/RequestPage';
 import { connect } from "react-redux";
 import { Layout, Menu, Spin } from 'antd';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
@@ -20,9 +20,9 @@ const routes = [
     path: "/AddItem",
     exact: true,
     sidebar: () => <div> Waiting for Implement</div>,
-    main: () => <NewItemPage />
+    main: () => <RequestPage />
   },
-  
+
 ];
 
 class AppForm extends Component {
@@ -69,18 +69,23 @@ class AppForm extends Component {
                 >
                   <Menu.Item key="1">  <Link to="/ListItemByStatus">Home</Link></Menu.Item>
                   <Menu.Item key="2">  <Link to="/AddItem">Add </Link></Menu.Item>
-               
+
                 </Menu>
               </Header>
               <Content style={{ margin: '0 16px' }}>
-              {routes.map((route, index) => (
-                <Route
-                  key={index}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.main}
-                />
-              ))}
+                <div className='row'>
+                  <div className="col-sm-12 col-md-12 col-lg-12" style={{ padding: 5 }}>
+                    {routes.map((route, index) => (
+                      <Route
+                        key={index}
+                        path={route.path}
+                        exact={route.exact}
+                        component={route.main}
+                      />
+                    ))}
+                  </div>
+                </div>
+
               </Content>
 
             </Layout>
@@ -93,7 +98,7 @@ class AppForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    flag: state.globalFalg.isLoading
+    flag: state.globalFlag.isLoading
   }
 }
 
