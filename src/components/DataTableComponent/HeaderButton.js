@@ -9,7 +9,6 @@ import {
     OnAfterActionResponseWaitingPage
 } from "../../actions";
 import { mapDataFilterWaitingPage } from '../../helpers/mappingData';
-import { OperateActionAPI } from "../../services/apiService";
 
 const confirm = Modal.confirm;
 
@@ -43,25 +42,25 @@ class ConnectHeaderButtonWaitingForm extends Component {
         }
 
         this.props.SetFlagLoading(true);
-        OperateActionAPI(data).then(resolve => {
+        // OperateActionAPI(data).then(resolve => {
 
-            this.props.SetFlagLoading(false);
-            if (resolve.status === 200) {
-                let pack = {
-                    clearSelected: true, 
-                }
+        //     this.props.SetFlagLoading(false);
+        //     if (resolve.status === 200) {
+        //         let pack = {
+        //             clearSelected: true, 
+        //         }
 
-                let text = resolve.data.message.map(e => (e.message)).join('<br/>')
-                Modal.info({
-                    title: 'Info',
-                    content: text
-                });
+        //         let text = resolve.data.message.map(e => (e.message)).join('<br/>')
+        //         Modal.info({
+        //             title: 'Info',
+        //             content: text
+        //         });
 
-                this.props.OnActionRes(pack);
-            }
-            else throw resolve;
-        })
-            .catch(error => { this.props.SetFlagLoading(false); });
+        //         this.props.OnActionRes(pack);
+        //     }
+        //     else throw resolve;
+        // })
+        //     .catch(error => { this.props.SetFlagLoading(false); });
     }
 
     render() {

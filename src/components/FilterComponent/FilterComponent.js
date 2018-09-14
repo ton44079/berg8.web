@@ -10,9 +10,7 @@ import {
   OnFilterWaitingPage,
   GetDocumentWaitingPage
 } from "../../actions";
-import { GetDocumentListAPI } from "../../services/apiService";
 import { mapDataFilterWaitingPage } from '../../helpers/mappingData';
-import { promises } from 'fs';
 
 const dateFormat = 'DD/MM/YYYY';
 

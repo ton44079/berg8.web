@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import { Col, Row, Steps, Button, message, Card } from 'antd';
-import Intinerary from '../../forms/Intinerary';
+import Intinerary from '../../components/forms/Intinerary';
+import CostChangeTo from '../../components/forms/CostChangeTo';
 import './RequestPage.css';
 import { changeStepRequestPage } from '../../actions';
 //const Step = Steps.Step;
@@ -13,7 +14,7 @@ const steps = [
     },
     {
         title: 'COST CHARGE TO',
-        content: <p>HII</p>
+        content: <CostChangeTo />
     },
     {
         title: 'EXPENDITURE',
@@ -36,9 +37,13 @@ class RequestPage extends React.Component {
 
         return (
             <Card title="Travel Request" bordered={false}>
-                <Steps current={stepCurrent}>
-                    {steps.map(item => <Steps.Step key={item.title} title={item.title} />)}
-                </Steps>
+                <Row>
+                    <Col>
+                        <Steps current={stepCurrent}>
+                            {steps.map(item => <Steps.Step key={item.title} title={item.title} />)}
+                        </Steps>
+                    </Col>
+                </Row>
                 <div className="steps-content">{steps[stepCurrent].content}</div>
                 <div className="steps-action">
                     {
