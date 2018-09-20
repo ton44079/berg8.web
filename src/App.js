@@ -11,13 +11,13 @@ const { Header, Footer, Sider, Content } = Layout;
 
 const routes = [
   {
-    path: "/ListItemByStatus",
+    path: "/berg8.web/ListItemByStatus",
     exact: true,
     sidebar: () => <WaitingPageSideBar />,
     main: () => <WaitingPage />
   },
   {
-    path: "/AddItem",
+    path: "/berg8.web/AddItem",
     exact: true,
     sidebar: () => <div> Waiting for Implement</div>,
     main: () => <RequestPage />
@@ -67,8 +67,8 @@ class AppForm extends Component {
                   defaultSelectedKeys={['1']}
                   style={{ lineHeight: '64px' }}
                 >
-                  <Menu.Item key="1">  <Link to="/ListItemByStatus">Home</Link></Menu.Item>
-                  <Menu.Item key="2">  <Link to="/AddItem">Add </Link></Menu.Item>
+                  <Menu.Item key="1">  <Link to="/berg8.web/ListItemByStatus">Home</Link></Menu.Item>
+                  <Menu.Item key="2">  <Link to="/berg8.web/AddItem">Add </Link></Menu.Item>
 
                 </Menu>
               </Header>
