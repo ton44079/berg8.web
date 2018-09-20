@@ -37,7 +37,7 @@ class AppForm extends Component {
   render() {
     const { flag } = this.props;
     return (
-      <HashRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
 
         <Spin size="large" spinning={flag}>
           <Layout style={{ minHeight: '100vh' }}>
@@ -67,7 +67,7 @@ class AppForm extends Component {
                   defaultSelectedKeys={['1']}
                   style={{ lineHeight: '64px' }}
                 >
-                  <Menu.Item key="1">  <Link to="/ListItemByStatus">Home</Link></Menu.Item>
+                  <Menu.Item key="1">  <Link  to="/ListItemByStatus">Home</Link></Menu.Item>
                   <Menu.Item key="2">  <Link to="/AddItem">Add </Link></Menu.Item>
 
                 </Menu>
@@ -94,7 +94,7 @@ class AppForm extends Component {
             </Layout>
           </Layout>
         </Spin>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
