@@ -5,7 +5,7 @@ import WaitingPageSideBar from './pages/WaitingPage/WaitingPageSideBar';
 import RequestPage from './pages/RequestPage/RequestPage';
 import { connect } from "react-redux";
 import { Layout, Menu, Spin } from 'antd';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: "/berg8.web/AddItem",
-    exact: true,
+    exact: false,
     sidebar: () => <div> Waiting for Implement</div>,
     main: () => <RequestPage />
   },
@@ -75,14 +75,17 @@ class AppForm extends Component {
               <Content style={{ margin: '0 16px' }}>
                 <div className='row'>
                   <div className="col-sm-12 col-md-12 col-lg-12" style={{ padding: 5 }}>
+                  <Switch>
+
                     {routes.map((route, index) => (
                       <Route
-                        key={index}
-                        path={route.path}
-                        exact={route.exact}
-                        component={route.main}
+                      key={index}
+                      path={route.path}
+                      exact={route.exact}
+                      component={route.main}
                       />
-                    ))}
+                      ))}
+                  </Switch>
                   </div>
                 </div>
 
