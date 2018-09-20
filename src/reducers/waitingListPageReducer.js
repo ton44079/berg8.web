@@ -45,12 +45,12 @@ const waitingListPageReducer = (state = defaultState, action) => {
         case ActType.API_BUTTON_WAITING_PAGE_SUCCESS:
             return { ...state, actions: action.payload.data.ACTIONS };
         case ActType.API_BUTTON_WAITING_PAGE_FAIL:
-            networkError()
+          //  networkError()
             return { ...state };
         case ActType.API_TASK_WAITING_PAGE_SUCCESS:
             return { ...state, myTasks: action.payload.data.TASKS };
         case ActType.API_TASK_WAITING_PAGE_FAIL:
-            networkError()
+           // networkError()
             return { ...state };
         case ActType.API_DOCUMENTS_WAITTING_PAGE_SUCCESS:
             return { ...state, ...{ data: action.payload.data.DOCUMENTS, selected: [] } };
