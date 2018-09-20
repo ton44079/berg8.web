@@ -37,7 +37,7 @@ class AppForm extends Component {
   render() {
     const { flag } = this.props;
     return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
 
         <Spin size="large" spinning={flag}>
           <Layout style={{ minHeight: '100vh' }}>
