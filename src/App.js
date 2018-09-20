@@ -5,7 +5,7 @@ import WaitingPageSideBar from './pages/WaitingPage/WaitingPageSideBar';
 import RequestPage from './pages/RequestPage/RequestPage';
 import { connect } from "react-redux";
 import { Layout, Menu, Spin } from 'antd';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Link,Switch, HashRouter } from 'react-router-dom';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -37,7 +37,7 @@ class AppForm extends Component {
   render() {
     const { flag } = this.props;
     return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
 
         <Spin size="large" spinning={flag}>
           <Layout style={{ minHeight: '100vh' }}>
@@ -94,7 +94,7 @@ class AppForm extends Component {
             </Layout>
           </Layout>
         </Spin>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
